@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-//passes requests to the service
+// passes requests to the service
 @RestController
 @RequestMapping("/api/v1/employee")
 public class EmployeeController {
@@ -44,7 +44,7 @@ public class EmployeeController {
         return employeeService.createEmployee(requestBody);
     }
 
-    //sets the termination date to now
+    // sets the termination date to now
     @PatchMapping("/{uuid}/terminate")
     public Employee terminateEmployee(@PathVariable UUID uuid) {
         return employeeService.terminateEmployee(uuid);

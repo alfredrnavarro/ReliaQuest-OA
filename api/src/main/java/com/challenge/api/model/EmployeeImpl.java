@@ -19,6 +19,6 @@ public class EmployeeImpl implements Employee {
     private String jobTitle;
     private String email;
     private Instant contractHireDate;
-    //the null means the employee has not been terminated
+    // the null means the employee has not been terminated
     private Instant contractTerminationDate;
 }

@@ -1,4 +1,5 @@
 package com.challenge.api.service;
+
 import com.challenge.api.model.Employee;
 import com.challenge.api.model.EmployeeImpl;
 import java.time.Instant;
@@ -69,7 +70,7 @@ public class EmployeeService {
     public Employee terminateEmployee(UUID uuid) {
 
         Employee employee = getEmployeeByUuid(uuid);
-        //make sure original termination date doesnt get overwritten
+        // make sure original termination date doesnt get overwritten
         if (employee.getContractTerminationDate() != null) {
             log.warn("Employee {} is already terminated", uuid);
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Employee is already terminated");
@@ -78,7 +79,6 @@ public class EmployeeService {
         log.info("Terminated employee {}", uuid);
         return employee;
     }
-
 
     private boolean isBlank(String value) {
         return value == null || value.isBlank();

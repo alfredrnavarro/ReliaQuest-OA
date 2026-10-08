@@ -33,7 +33,9 @@ class EmployeeControllerTest {
 
     @Test
     void getAllEmployeesReturnsList() throws Exception {
-        mockMvc.perform(get(BASE_URL)).andExpect(status().isOk()).andExpect(jsonPath("$").isNotEmpty());
+        mockMvc.perform(get(BASE_URL))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isNotEmpty());
     }
 
     @Test
